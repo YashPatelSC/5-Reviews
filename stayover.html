@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stayover Service Checker</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1 { font-size: 24px; }
+    input[type="file"] { margin-bottom: 20px; }
+    ul { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h1>Stayover Service Room Checker</h1>
+  <p>Upload the guest CSV file below to see which rooms need stayover service today.</p>
+  <input type="file" id="csvFile" accept=".csv" />
+  <ul id="output"></ul>
+
+  <script>
+    function daysBetween(date1, date2) {
+      const d1 = new Date(date1);
+      const d2 = new Date(date2);
+      return Math.floor((d2 - d1) / (1000 * 60 * 60 * 24));
+    }
+
+    document.getElementById('csvFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      Papa.parse(file, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const today = new Date();
+          const output = document.getElementById('output');
+          output.innerHTML = '';
+
+          results.data.forEach(row => {
+            if (row['Status'] === 'Confirmed' && row['Secondary_Status'] === 'In House') {
+              const arrival = new Date(row['Arrival_Date']);
+              const departure = new Date(row['Departure_Date']);
+
+              // Only calculate if today is between arrival and departure
+              if (today >= arrival && today < departure) {
+                const daysStayed = daysBetween(arrival, today);
+                if (daysStayed > 0 && daysStayed % 3 === 0) {
+                  const room = row['Room_Number'];
+                  const li = document.createElement('li');
+                  li.textContent = `Room ${room} needs stayover service today.`;
+                  output.appendChild(li);
+                }
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
