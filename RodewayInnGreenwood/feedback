@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rate Your Stay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .stars {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+    }
+    label {
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      display: inline-block;
+      margin-right: 15px;
+      width: 20px;
+      height: 20px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 25px;
+      margin-top: 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0c040;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e0a030;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank you for staying with us!</h1>
+  <p>Rate us based on your experience:</p>
+
+  <form id="reviewForm">
+    <div class="stars">
+      <label><input type="radio" name="stars" value="1">⭐</label>
+      <label><input type="radio" name="stars" value="2">⭐⭐</label>
+      <label><input type="radio" name="stars" value="3">⭐⭐⭐</label>
+      <label><input type="radio" name="stars" value="4">⭐⭐⭐⭐</label>
+      <label><input type="radio" name="stars" value="5">⭐⭐⭐⭐⭐</label>
+    </div>
+    <button type="submit">Next</button>
+  </form>
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const stars = document.querySelector('input[name="stars"]:checked');
+      if (!stars) {
+        alert("Please select a rating.");
+        return;
+      }
+      const rating = parseInt(stars.value);
+      if (rating <= 3) {
+        window.location.href = "https://forms.gle/2tWdBWgavrWJ4wYVA"; // Replace with your feedback form
+      } else {
+        window.location.href = "https://search.google.com/local/writereview?placeid=ChIJG9px6mYB-IgRmmgqLiOnT6c";
+      }
+    });
+  </script>
+</body>
+</html>
