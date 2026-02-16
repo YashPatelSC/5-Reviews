@@ -38,7 +38,6 @@
       cursor: pointer;
     }
     input[type="radio"] {
-      display: inline-block;
       margin-right: 15px;
       width: 20px;
       height: 20px;
@@ -58,6 +57,7 @@
   </style>
 </head>
 <body>
+
   <h1>Thank you for staying with us!</h1>
   <p>Rate us based on your experience:</p>
 
@@ -75,19 +75,24 @@
   <script>
     document.getElementById("reviewForm").addEventListener("submit", function(event) {
       event.preventDefault();
+
       const stars = document.querySelector('input[name="stars"]:checked');
       if (!stars) {
         alert("Please select a rating.");
         return;
       }
+
       const rating = parseInt(stars.value);
+
       if (rating <= 3) {
-        window.location.href = "https://forms.gle/G4M2QQbxJ1D2Ggto6"; // Replace with your feedback form
+        // Internal feedback (private)
+        window.location.href = "https://forms.gle/G4M2QQbxJ1D2Ggto6";
       } else {
-        window.location.href = "https://www.tripadvisor.com/UserReviewEdit-g30090-d103365-Super_8_by_Wyndham_Anderson_Clemson_Area-Anderson_South_Carolina.html
-";
+        // Public TripAdvisor review
+        window.location.href = "https://www.tripadvisor.com/UserReviewEdit-g30090-d103365-Super_8_by_Wyndham_Anderson_Clemson_Area-Anderson_South_Carolina.html";
       }
     });
   </script>
+
 </body>
 </html>
