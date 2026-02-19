@@ -1,221 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Welcome to Super 8 Anderson SC</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Super 8 Anderson SC</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff8e1;
+            color: #333;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff8e1;
-    color: #333;
-}
+        /* Page container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-/* Page container */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
+        header {
+            background-color: #ffcc00;
+            color: #222;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
 
-header {
-    background-color: #ffcc00;
-    color: #222;
-    padding: 1.5rem 1rem;
-    text-align: center;
-}
+        header img {
+            max-height: 80px;
+        }
 
-header img {
-    max-height: 80px;
-}
+        h1 {
+            margin: 0.5rem 0;
+        }
 
-h1 {
-    margin: 0.5rem 0;
-}
+        /* Sections */
+        .section {
+            padding: 1.5rem;
+            margin: 1.5rem 1rem;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
 
-/* Sections */
-.section {
-    padding: 1.5rem;
-    margin: 1.5rem 1rem;
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
+        .section h2 {
+            color: #d32f2f;
+            border-bottom: 2px solid #d32f2f;
+            padding-bottom: 5px;
+        }
 
-.section h2 {
-    color: #d32f2f;
-    border-bottom: 2px solid #d32f2f;
-    padding-bottom: 5px;
-}
+        /* Animated Review Button */
+        .review-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 28px;
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            animation: pulseGlow 2.5s infinite;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
 
-/* Animated Review Button */
-.review-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 14px 28px;
-    background-color: #ffcc00;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    animation: pulseGlow 2.5s infinite;
-    transition: transform .25s ease, box-shadow .25s ease;
-}
+        .review-button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+        }
 
-.review-button:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-}
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6);
+            }
 
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(255,204,0,0.6); }
-    70% { box-shadow: 0 0 0 12px rgba(255,204,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,204,0,0); }
-}
+            70% {
+                box-shadow: 0 0 0 12px rgba(255, 204, 0, 0);
+            }
 
-/* Maps Buttons */
-.map-links a {
-    display:block;
-    margin:10px 0;
-    padding:10px;
-    background:#f7f7f7;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+            }
+        }
 
-.map-links a:hover {
-    background:#ffe082;
-}
+        /* Maps Buttons */
+        .map-links a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-/* Footer */
-footer {
-    text-align:center;
-    font-size:.9rem;
-    padding:1rem;
-    color:#777;
-    margin-top:2rem;
-}
+        .map-links a:hover {
+            background: #ffe082;
+        }
 
-a {
-    color:#0077cc;
-    text-decoration:none;
-    font-weight:bold;
-}
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: .9rem;
+            padding: 1rem;
+            color: #777;
+            margin-top: 2rem;
+        }
 
-a:hover {
-    text-decoration:underline;
-}
+        a {
+            color: #0077cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-</style>
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<img src="Super8logo.png" alt="Super 8 Logo" />
-<h1>Welcome to Super 8 Anderson SC</h1>
-<p>Your Comfort is Our Priority</p>
-</header>
+    <header>
+        <img src="Super8logo.png" alt="Super 8 Logo" />
+        <h1>Welcome to Super 8 Anderson SC</h1>
+        <p>Your Comfort is Our Priority</p>
+    </header>
 
-<div class="container">
+    <div class="container">
 
-<div class="section">
-<h2>WiFi Information</h2>
-<p><strong>Network:</strong> Super8AlwaysSuper</p>
-<p><strong>Password:</strong> welcome1</p>
-</div>
+        <div class="section">
+            <h2>WiFi Information</h2>
+            <p><strong>Network:</strong> Super8AlwaysSuper</p>
+            <p><strong>Password:</strong> welcome1</p>
+        </div>
 
-<div class="section">
-<h2>TV Channel Guide</h2>
-<p>Click here to view our <a href="TvChannelGuide.pdf" target="_blank">TV Channel Guide (PDF)</a>.</p>
-</div>
+        <div class="section">
+            <h2>TV Channel Guide</h2>
+            <p>Click here to view our <a href="TvChannelGuide.pdf" target="_blank">TV Channel Guide (PDF)</a>.</p>
+        </div>
 
-<div class="section">
-<h2>Breakfast</h2>
-<p><strong>Hours:</strong> 6:00 AM - 9:00 AM</p>
-<p><strong>Location:</strong> Lobby Area</p>
-</div>
+        <div class="section">
+            <h2>Breakfast</h2>
+            <p><strong>Hours:</strong> 6:00 AM - 9:00 AM</p>
+            <p><strong>Location:</strong> Lobby Area</p>
+        </div>
 
-<div class="section">
-<h2>Ice & Vending Machines</h2>
-<p>Located on the <strong>1st Floor</strong>.</p>
-</div>
+        <div class="section">
+            <h2>Ice & Vending Machines</h2>
+            <p>Located on the <strong>1st Floor</strong>.</p>
+        </div>
 
-<div class="section">
-<h2>Hotel Policies & Safety</h2>
+        <div class="section">
+            <h2>Hotel Policies & Safety</h2>
 
-<p><strong>Pet Policy:</strong> $25 + tax per pet, per night</p>
+            <p><strong>Pet Policy:</strong> $25 + tax per pet, per night</p>
 
-<p><strong>Incidental Deposit Policy:</strong><br>
-<strong>A $50.00 INCIDENTAL DEPOSIT IS REQUIRED AT CHECK-IN FOR ALL HOTEL STAYS.</strong><br>
-(A $3.00 processing fee applies to credit or debit card transactions.)<br>
-The deposit is refundable after room inspection, provided there are no damages or policy violations.
-</p>
+            <p><strong>Incidental Deposit Policy:</strong><br>
+                <strong>A $50.00 INCIDENTAL DEPOSIT IS REQUIRED AT CHECK-IN FOR ALL HOTEL STAYS.</strong><br>
+                (A $3.00 processing fee applies to credit or debit card transactions.)<br>
+                The deposit is refundable after room inspection, provided there are no damages or policy violations.
+            </p>
 
-<p><strong>Smoking Policy:</strong> Smoking is only permitted in designated smoking rooms.
-A <strong>$200.00 cleaning and damage fee</strong> will be charged for any violation of this policy.</p>
+            <p><strong>Smoking Policy:</strong> Smoking is only permitted in designated smoking rooms.
+                A <strong>$200.00 cleaning and damage fee</strong> will be charged for any violation of this policy.</p>
 
-<p><strong>Safety Notice:</strong> The <strong>back door is locked after 11:00 PM</strong>.
-Please use your room key to access the front entrance.</p>
+            <p><strong>Safety Notice:</strong> The <strong>back door is locked after 11:00 PM</strong>.
+                Please use your room key to access the front entrance.</p>
 
-</div>
+        </div>
+        <div class="section">
+            <h2>Guest Services</h2>
+            <p><strong>Front Desk:</strong> Dial 0 from your room phone</p>
+            <p><strong>Emergency:</strong> Dial 911</p>
+            <p><strong>Housekeeping Requests:</strong> Contact Front Desk</p>
+        </div>
+    </div>
 
-<!-- ⭐ Review Section -->
-<div class="section" style="text-align:center;">
-<h2>Enjoyed Your Stay?</h2>
-<p>If you had a great experience, we would truly appreciate a quick review!</p>
 
-<a href="https://www.yourhotelreview.com/Super8AndersonSC"
-target="_blank"
-class="review-button">
-⭐ Leave Us a Review
-</a>
-</div>
+    <!-- 📍 NEW LOCAL MAPS SECTION -->
+    <div class="section">
+        <h2>Local Recommendations</h2>
+        <p>Looking for food, gas, shopping, or things to do nearby?</p>
 
-<!-- 📍 NEW LOCAL MAPS SECTION -->
-<div class="section">
-<h2>Local Recommendations</h2>
-<p>Looking for food, gas, shopping, or things to do nearby?</p>
+        <div class="map-links">
 
-<div class="map-links">
+            <a href="https://www.google.com/maps/search/restaurants+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+                🍽️ Restaurants Nearby
+            </a>
 
-<a href="https://www.google.com/maps/search/restaurants+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-🍽️ Restaurants Nearby
-</a>
+            <a href="https://www.google.com/maps/search/gas+station+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+                ⛽ Gas Stations Nearby
+            </a>
 
-<a href="https://www.google.com/maps/search/gas+station+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-⛽ Gas Stations Nearby
-</a>
+            <a href="https://www.google.com/maps/search/pharmacy+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+                💊 Pharmacy Nearby
+            </a>
 
-<a href="https://www.google.com/maps/search/pharmacy+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-💊 Pharmacy Nearby
-</a>
+            <a href="https://www.google.com/maps/search/things+to+do+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+                🎯 Things To Do Nearby
+            </a>
 
-<a href="https://www.google.com/maps/search/things+to+do+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-🎯 Things To Do Nearby
-</a>
+        </div>
 
-</div>
-</div>
 
-<div class="section">
-<h2>Guest Services</h2>
-<p><strong>Front Desk:</strong> Dial 0 from your room phone</p>
-<p><strong>Emergency:</strong> Dial 911</p>
-<p><strong>Housekeeping Requests:</strong> Contact Front Desk</p>
-</div>
 
-<footer>
-&copy; 2026 Super 8 by Wyndham Anderson/Clemson Area<br>
-3302 Cinema Avenue, Anderson, SC 29621 | (864) 225-8384
-</footer>
+    </div>
+    <!-- ⭐ Review Section -->
+    <div class="section" style="text-align:center;">
+        <h2>Enjoyed Your Stay?</h2>
+        <p>If you had a great experience, we would truly appreciate a quick review!</p>
 
-</div>
+        <a href="https://www.yourhotelreview.com/Super8AndersonSC" target="_blank" class="review-button">
+            ⭐ Leave Us a Review
+        </a>
+    </div>
+    <footer>
+        &copy; 2026 Super 8 by Wyndham Anderson/Clemson Area<br>
+        3302 Cinema Avenue, Anderson, SC 29621 | (864) 225-8384
+    </footer>
+
+
 
 </body>
+
 </html>
