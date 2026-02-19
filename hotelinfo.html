@@ -16,7 +16,7 @@ body {
     color: #333;
 }
 
-/* Page width control */
+/* Page container */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -27,7 +27,6 @@ header {
     color: #222;
     padding: 1.5rem 1rem;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 header img {
@@ -36,9 +35,9 @@ header img {
 
 h1 {
     margin: 0.5rem 0;
-    font-size: 1.8rem;
 }
 
+/* Sections */
 .section {
     padding: 1.5rem;
     margin: 1.5rem 1rem;
@@ -51,10 +50,9 @@ h1 {
     color: #d32f2f;
     border-bottom: 2px solid #d32f2f;
     padding-bottom: 5px;
-    margin-bottom: 10px;
 }
 
-/* ⭐ Animated Review Button */
+/* Animated Review Button */
 .review-button {
     display: inline-block;
     margin-top: 15px;
@@ -64,45 +62,53 @@ h1 {
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
-    font-size: 1.1rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
     animation: pulseGlow 2.5s infinite;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .review-button:hover {
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-    background-color: #f0b800;
 }
 
 @keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255,204,0,0.6);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(255,204,0,0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255,204,0,0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(255,204,0,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(255,204,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,204,0,0); }
 }
 
+/* Maps Buttons */
+.map-links a {
+    display:block;
+    margin:10px 0;
+    padding:10px;
+    background:#f7f7f7;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.map-links a:hover {
+    background:#ffe082;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 1rem;
-    color: #777;
-    margin-top: 2rem;
+    text-align:center;
+    font-size:.9rem;
+    padding:1rem;
+    color:#777;
+    margin-top:2rem;
 }
 
 a {
-    color: #0077cc;
-    text-decoration: none;
-    font-weight: bold;
+    color:#0077cc;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration:underline;
 }
 
 </style>
@@ -111,9 +117,9 @@ a:hover {
 <body>
 
 <header>
-    <img src="Super8logo.png" alt="Super 8 Logo" />
-    <h1>Welcome to Super 8 Anderson SC</h1>
-    <p>Your Comfort is Our Priority</p>
+<img src="Super8logo.png" alt="Super 8 Logo" />
+<h1>Welcome to Super 8 Anderson SC</h1>
+<p>Your Comfort is Our Priority</p>
 </header>
 
 <div class="container">
@@ -154,34 +160,59 @@ The deposit is refundable after room inspection, provided there are no damages o
 <p><strong>Smoking Policy:</strong> Smoking is only permitted in designated smoking rooms.
 A <strong>$200.00 cleaning and damage fee</strong> will be charged for any violation of this policy.</p>
 
-<p><strong>Safety Notice:</strong> For everyone's safety, the <strong>back door is locked after 11:00 PM</strong>.
-Please use your room key to access the front door after this time.</p>
+<p><strong>Safety Notice:</strong> The <strong>back door is locked after 11:00 PM</strong>.
+Please use your room key to access the front entrance.</p>
 
 </div>
+
+<!-- ⭐ Review Section -->
+<div class="section" style="text-align:center;">
+<h2>Enjoyed Your Stay?</h2>
+<p>If you had a great experience, we would truly appreciate a quick review!</p>
+
+<a href="https://www.yourhotelreview.com/Super8AndersonSC"
+target="_blank"
+class="review-button">
+⭐ Leave Us a Review
+</a>
+</div>
+
+<!-- 📍 NEW LOCAL MAPS SECTION -->
+<div class="section">
+<h2>Local Recommendations</h2>
+<p>Looking for food, gas, shopping, or things to do nearby?</p>
+
+<div class="map-links">
+
+<a href="https://www.google.com/maps/search/restaurants+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+🍽️ Restaurants Nearby
+</a>
+
+<a href="https://www.google.com/maps/search/gas+station+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+⛽ Gas Stations Nearby
+</a>
+
+<a href="https://www.google.com/maps/search/pharmacy+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+💊 Pharmacy Nearby
+</a>
+
+<a href="https://www.google.com/maps/search/things+to+do+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
+🎯 Things To Do Nearby
+</a>
+
+</div>
+</div>
+
 <div class="section">
 <h2>Guest Services</h2>
 <p><strong>Front Desk:</strong> Dial 0 from your room phone</p>
 <p><strong>Emergency:</strong> Dial 911</p>
 <p><strong>Housekeeping Requests:</strong> Contact Front Desk</p>
 </div>
-<!-- ⭐ Review Section -->
-<div class="section" style="text-align:center;">
-<h2>Enjoyed Your Stay?</h2>
-<p>If you had a great experience, we would truly appreciate a quick review. Your feedback helps our team continue providing great service!</p>
-
-<a href="https://www.yourhotelreview.com/Super8AndersonSC-GR"
-   target="_blank"
-   class="review-button">
-   ⭐ Leave Us a Review
-</a>
-
-</div>
-
-
 
 <footer>
-    &copy; 2026 Super 8 by Wyndham Anderson/Clemson Area<br>
-    3302 Cinema Avenue, Anderson, SC 29621 | (864) 225-8384
+&copy; 2026 Super 8 by Wyndham Anderson/Clemson Area<br>
+3302 Cinema Avenue, Anderson, SC 29621 | (864) 225-8384
 </footer>
 
 </div>
