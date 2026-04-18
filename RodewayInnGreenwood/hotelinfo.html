@@ -1,230 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome to Super 8 Anderson SC</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Welcome to Rodeway Inn Greenwood SC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --rodeway-blue: #1f79c7;
+            --rodeway-blue-dark: #165f9d;
+            --choice-beige: #d8cfbf;
+            --choice-brown: #6d6246;
+            --page-bg: #f6f3ec;
+            --card-bg: #ffffff;
+            --text: #2f2f2f;
+            --muted: #6d6d6d;
+            --border: #e7e0d4;
+            --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #fff8e1;
-            color: #333;
+            background: linear-gradient(180deg, #eef5fb 0%, var(--page-bg) 100%);
+            color: var(--text);
         }
 
-        /* Page container */
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
+            padding: 0 18px 40px;
         }
 
         header {
-            background-color: #ffcc00;
-            color: #222;
-            padding: 1.5rem 1rem;
+            background: linear-gradient(135deg, var(--rodeway-blue) 0%, var(--rodeway-blue-dark) 100%);
+            color: #fff;
             text-align: center;
+            padding: 36px 20px 30px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-card {
+            max-width: 760px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 22px;
+            padding: 26px 20px;
+            backdrop-filter: blur(4px);
         }
 
         header img {
-            max-height: 80px;
+            width: min(100%, 520px);
+            height: auto;
+            display: block;
+            margin: 0 auto 18px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.16));
         }
 
         h1 {
-            margin: 0.5rem 0;
+            margin: 0;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            font-weight: 700;
         }
 
-        /* Sections */
+        .subhead {
+            margin: 10px auto 0;
+            max-width: 620px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.94);
+        }
+
         .section {
-            padding: 1.5rem;
-            margin: 1.5rem 1rem;
-            border-radius: 12px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            background: var(--card-bg);
+            margin: 18px 0;
+            padding: 24px;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
 
         .section h2 {
-            color: #d32f2f;
-            border-bottom: 2px solid #d32f2f;
-            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: var(--rodeway-blue-dark);
+            font-size: 1.28rem;
+            border-bottom: 2px solid #d8e7f5;
+            padding-bottom: 8px;
         }
 
-        /* Animated Review Button */
-        .review-button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 14px 28px;
-            background-color: #ffcc00;
-            color: #000;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            animation: pulseGlow 2.5s infinite;
-            transition: transform .25s ease, box-shadow .25s ease;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
         }
 
-        .review-button:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+        .info-tile {
+            background: #faf8f2;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
         }
 
-        @keyframes pulseGlow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6);
-            }
-
-            70% {
-                box-shadow: 0 0 0 12px rgba(255, 204, 0, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
-            }
-        }
-
-        /* Maps Buttons */
-        .map-links a {
+        .info-tile strong {
             display: block;
-            margin: 10px 0;
-            padding: 10px;
-            background: #f7f7f7;
-            border-radius: 8px;
+            color: var(--choice-brown);
+            margin-bottom: 6px;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .map-links a,
+        .cta-row a {
+            display: inline-block;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
         }
 
-        .map-links a:hover {
-            background: #ffe082;
+        .map-links {
+            display: grid;
+            gap: 12px;
         }
 
-        /* Footer */
+        .map-links a {
+            padding: 14px 16px;
+            background: #f7fafc;
+            border: 1px solid #d7e6f2;
+            color: var(--rodeway-blue-dark);
+        }
+
+        .map-links a:hover,
+        .cta-row a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .primary-btn {
+            background: var(--rodeway-blue);
+            color: #fff;
+            padding: 14px 22px;
+        }
+
+        .secondary-btn {
+            background: var(--choice-beige);
+            color: var(--choice-brown);
+            padding: 14px 22px;
+        }
+
+        .highlight-box {
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+        }
+
         footer {
             text-align: center;
-            font-size: .9rem;
-            padding: 1rem;
-            color: #777;
-            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #5c5c5c;
+            padding: 22px 18px 36px;
         }
 
-        a {
-            color: #0077cc;
-            text-decoration: none;
-            font-weight: bold;
+        .small {
+            font-size: 0.92rem;
+            color: var(--muted);
         }
 
-        a:hover {
-            text-decoration: underline;
+        @media (max-width: 600px) {
+            .section {
+                padding: 20px;
+            }
+
+            .header-card {
+                padding: 22px 16px;
+            }
+
+            .cta-row {
+                flex-direction: column;
+            }
+
+            .cta-row a {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
-
 <body>
-
     <header>
-        <img src="Super8logo.png" alt="Super 8 Logo" />
-        <h1>Welcome to Super 8 Anderson SC</h1>
-        <p>Your Comfort is Our Priority</p>
+        <div class="header-card">
+            <img src="rodeway_logo.png" alt="Rodeway Inn Greenwood SC logo" />
+            <h1>Welcome to Rodeway Inn Greenwood SC</h1>
+            <p class="subhead">A simple, comfortable stay in Greenwood with easy access to local dining, shopping, and area attractions.</p>
+        </div>
     </header>
 
     <div class="container">
-
         <div class="section">
-            <h2>WiFi Information</h2>
-            <p><strong>Network:</strong> Super8AlwaysSuper</p>
-            <p><strong>Password:</strong> welcome1</p>
+            <h2>Stay Information</h2>
+            <div class="info-grid">
+                <div class="info-tile">
+                    <strong>Free WiFi</strong>
+                    Network: <span contenteditable="true">UPDATE WIFI NAME</span><br>
+                    Password: <span contenteditable="true">UPDATE WIFI PASSWORD</span>
+                </div>
+                <div class="info-tile">
+                    <strong>Front Desk</strong>
+                    Call: <a href="tel:+18642232838">(864) 223-2838</a><br>
+                    In room assistance available through the front desk.
+                </div>
+                <div class="info-tile">
+                    <strong>Property Highlights</strong>
+                    Free parking, pet friendly accommodations, meeting space, and guest laundry.
+                </div>
+            </div>
         </div>
 
         <div class="section">
             <h2>TV Channel Guide</h2>
-            <p>Click here to view our <a href="TvChannelGuide.pdf" target="_blank">TV Channel Guide (PDF)</a>.</p>
+            <p>Click here to view your channel lineup: <a href="TvChannelGuide.pdf" target="_blank">TV Channel Guide (PDF)</a></p>
+            <p class="small">Replace the PDF file with your property specific channel guide before publishing.</p>
         </div>
 
         <div class="section">
-            <h2>Breakfast</h2>
-            <p><strong>Hours:</strong> 6:00 AM - 9:00 AM</p>
-            <p><strong>Location:</strong> Lobby Area</p>
+            <h2>Hotel Policies & Guest Notes</h2>
+            <p><strong>Pet Policy:</strong> <span contenteditable="true">Update your pet policy here</span></p>
+            <p><strong>Incidental Deposit Policy:</strong> <span contenteditable="true">Update your incidental deposit details here</span></p>
+            <p><strong>Smoking Policy:</strong> <span contenteditable="true">Update your smoking policy here</span></p>
+            <p><strong>Safety Notice:</strong> <span contenteditable="true">Update any after hours door or safety instructions here</span></p>
         </div>
 
-        <div class="section">
-            <h2>Ice & Vending Machines</h2>
-            <p>Located on the <strong>1st Floor</strong>.</p>
-        </div>
-
-        <div class="section">
-            <h2>Hotel Policies & Safety</h2>
-
-            <p><strong>Pet Policy:</strong> $25 + tax per pet, per night</p>
-
-            <p><strong>Incidental Deposit Policy:</strong><br>
-                <strong>A $50.00 INCIDENTAL DEPOSIT IS REQUIRED AT CHECK-IN FOR ALL HOTEL STAYS.</strong><br>
-                (A $3.00 processing fee applies to credit or debit card transactions.)<br>
-                The deposit is refundable after room inspection, provided there are no damages or policy violations.
-            </p>
-
-            <p><strong>Smoking Policy:</strong> Smoking is only permitted in designated smoking rooms.
-                A <strong>$200.00 cleaning and damage fee</strong> will be charged for any violation of this policy.</p>
-
-            <p><strong>Safety Notice:</strong> The <strong>back door is locked after 11:00 PM</strong>.
-                Please use your room key to access the front entrance.</p>
-
-        </div>
         <div class="section">
             <h2>Guest Services</h2>
-            <p><strong>Front Desk:</strong> Dial 0 from your room phone</p>
-            <p><strong>Emergency:</strong> Dial 911</p>
-            <p><strong>Housekeeping Requests:</strong> Contact Front Desk</p>
+            <div class="info-grid">
+                <div class="info-tile">
+                    <strong>Emergency</strong>
+                    Dial 911 for emergencies.
+                </div>
+                <div class="info-tile">
+                    <strong>Housekeeping Requests</strong>
+                    Please contact the front desk for towels, linen, or room needs.
+                </div>
+                <div class="info-tile">
+                    <strong>Address</strong>
+                    1215 N.E. SR 72 Bypass<br>
+                    Greenwood, SC 29649
+                </div>
+            </div>
         </div>
 
-
-
-        <!-- 📍 NEW LOCAL MAPS SECTION -->
         <div class="section">
             <h2>Local Recommendations</h2>
-            <p>Looking for food, gas, shopping, or things to do nearby?</p>
-
+            <p>Quick links for nearby food, fuel, pharmacy, and things to do around Greenwood.</p>
             <div class="map-links">
-
-                <a href="https://www.google.com/maps/search/restaurants+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-                    🍽️ Restaurants Nearby
-                </a>
-
-                <a href="https://www.google.com/maps/search/gas+station+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-                    ⛽ Gas Stations Nearby
-                </a>
-
-                <a href="https://www.google.com/maps/search/pharmacy+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-                    💊 Pharmacy Nearby
-                </a>
-
-                <a href="https://www.google.com/maps/search/things+to+do+near+3302+Cinema+Ave,+Anderson,+SC+29621" target="_blank">
-                    🎯 Things To Do Nearby
-                </a>
-
+                <a href="https://www.google.com/maps/search/restaurants+near+1215+N.E.+SR+72+Bypass,+Greenwood,+SC+29649" target="_blank">🍽️ Restaurants Nearby</a>
+                <a href="https://www.google.com/maps/search/gas+station+near+1215+N.E.+SR+72+Bypass,+Greenwood,+SC+29649" target="_blank">⛽ Gas Stations Nearby</a>
+                <a href="https://www.google.com/maps/search/pharmacy+near+1215+N.E.+SR+72+Bypass,+Greenwood,+SC+29649" target="_blank">💊 Pharmacy Nearby</a>
+                <a href="https://www.google.com/maps/search/things+to+do+near+1215+N.E.+SR+72+Bypass,+Greenwood,+SC+29649" target="_blank">🎯 Things To Do Nearby</a>
             </div>
-
-
-
         </div>
-        <!-- ⭐ Review Section -->
-        <div class="section" style="text-align:center;">
-            <h2>Enjoyed Your Stay?</h2>
-            <p>If you had a great experience, we would truly appreciate a quick review!</p>
 
-            <a href="https://www.yourhotelreview.com/Super8AndersonSC-TAR" target="_blank" class="review-button">
-                ⭐ Leave Us a Review
-            </a>
+        <div class="section highlight-box">
+            <h2>Need Anything During Your Stay?</h2>
+            <p>Our team is here to help make your stay smooth and convenient.</p>
+            <div class="cta-row">
+                <a class="primary-btn" href="https://www.choicehotels.com/south-carolina/greenwood/rodeway-inn-hotels/sc098" target="_blank">Book Direct</a>
+                <a class="secondary-btn" href="tel:+18642232838">Call Front Desk</a>
+            </div>
         </div>
     </div>
+
     <footer>
-        &copy; 2026 Super 8 by Wyndham Anderson/Clemson Area<br>
-        3302 Cinema Avenue, Anderson, SC 29621 | (864) 225-8384
+        &copy; 2026 Rodeway Inn Greenwood<br>
+        1215 N.E. SR 72 Bypass, Greenwood, SC 29649 | (864) 223-2838
     </footer>
-
-
-
 </body>
-
 </html>
