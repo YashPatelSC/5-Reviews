@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Economy Inn Fayetteville Feedback</title>
+
+<style>
+:root{
+  --red:#d60000;
+  --dark:#111;
+  --white:#fff;
+  --border:#e6e6e6;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--red);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:600px;
+  background:white;
+  border-radius:26px;
+  box-shadow:0 18px 50px rgba(0,0,0,.12);
+  overflow:hidden;
+  text-align:center;
+}
+
+.top{
+  padding:28px 20px 18px;
+  border-bottom:1px solid var(--border);
+}
+
+.economy-logo{
+  background:#d60000;
+  color:white;
+  font-weight:800;
+  font-size:32px;
+  letter-spacing:2px;
+  padding:16px 28px;
+  display:inline-block;
+  border:6px solid #111;
+  box-shadow:
+    inset 0 0 0 3px white,
+    0 6px 16px rgba(0,0,0,.2);
+  border-radius:4px;
+}
+
+.location{
+  margin-top:10px;
+  font-weight:600;
+  color:#d60000;
+  font-size:18px;
+}
+
+.content{
+  padding:30px 20px 20px;
+}
+
+.question{
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.stars{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.star-btn{
+  border:2px solid #e5e5e5;
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  font-size:26px;
+  cursor:pointer;
+  transition:.15s;
+  color:#f4b400;
+}
+
+.star-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.footer{
+  padding:18px 20px 24px;
+  font-size:14px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="top">
+<div class="economy-logo">ECONOMY INN</div>
+<div class="location">Fayetteville, NC</div>
+</div>
+
+<div class="content">
+<div class="question">How was your stay?</div>
+
+<div class="stars">
+<button class="star-btn" onclick="goToLink(5)">★★★★★</button>
+<button class="star-btn" onclick="goToLink(4)">★★★★☆</button>
+<button class="star-btn" onclick="goToLink(3)">★★★☆☆</button>
+<button class="star-btn" onclick="goToLink(2)">★★☆☆☆</button>
+<button class="star-btn" onclick="goToLink(1)">★☆☆☆☆</button>
+</div>
+</div>
+
+<div class="footer">
+Thank you for your feedback. Your response helps us improve the guest experience.
+</div>
+
+</div>
+
+<script>
+const googleReviewLink = "https://search.google.com/local/writereview?placeid=ChIJu-LjU48Tq4kROjEInUXC-FY";
+const privateFeedbackLink = "https://forms.gle/Aip7KsthczAWbyc9A";
+
+function goToLink(rating){
+if(rating >= 4){
+window.location.href = googleReviewLink;
+}else{
+window.location.href = privateFeedbackLink;
+}
+}
+</script>
+
+</body>
+</html>
