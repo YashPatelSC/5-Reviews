@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Knights Inn Fayetteville Feedback</title>
+
+<style>
+:root{
+  --purple:#4b146e;
+  --purple-dark:#351050;
+  --white:#ffffff;
+  --border:#e6e6e6;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--purple);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.card{
+  width:100%;
+  max-width:600px;
+  background:white;
+  border-radius:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,.12);
+  overflow:hidden;
+  text-align:center;
+}
+
+.top{
+  background:white;
+  padding:28px 20px 18px;
+  border-bottom:1px solid var(--border);
+}
+
+.logo-wrap{
+  width:170px;
+  margin:0 auto 10px;
+}
+
+.logo-wrap img{
+  width:100%;
+}
+
+.title{
+  color:var(--purple);
+  font-size:24px;
+  font-weight:700;
+}
+
+.location{
+  color:#666;
+  font-size:15px;
+  margin-top:4px;
+}
+
+.content{
+  padding:30px 20px 20px;
+}
+
+.question{
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.stars{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.star-btn{
+  border:2px solid #e5e5e5;
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  font-size:26px;
+  cursor:pointer;
+  transition:.15s;
+  color:#f4b400;
+}
+
+.star-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.footer{
+  padding:16px 20px 24px;
+  font-size:14px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="top">
+<div class="logo-wrap">
+<img src="knights-inn-logo.png" alt="Knights Inn">
+</div>
+<div class="title">Knights Inn</div>
+<div class="location">Fayetteville, NC</div>
+</div>
+
+<div class="content">
+<div class="question">How was your stay?</div>
+
+<div class="stars">
+<button class="star-btn" onclick="goToLink(5)">★★★★★</button>
+<button class="star-btn" onclick="goToLink(4)">★★★★☆</button>
+<button class="star-btn" onclick="goToLink(3)">★★★☆☆</button>
+<button class="star-btn" onclick="goToLink(2)">★★☆☆☆</button>
+<button class="star-btn" onclick="goToLink(1)">★☆☆☆☆</button>
+</div>
+</div>
+
+<div class="footer">
+Thank you for your feedback. Your response helps us improve the guest experience.
+</div>
+
+</div>
+
+<script>
+const googleReviewLink = "https://search.google.com/local/writereview?placeid=ChIJ0bJ8y6Bsq4kR5EE6EWXd_-8";
+const privateFeedbackLink = "https://forms.gle/81TSeR5zxWMKBZWB9";
+
+function goToLink(rating){
+if(rating >= 4){
+window.location.href = googleReviewLink;
+}else{
+window.location.href = privateFeedbackLink;
+}
+}
+</script>
+
+</body>
+</html>
